@@ -13,7 +13,7 @@ def add_item():
     else:
         try:
             price = float(input("Enter item price: "))
-            if price < 0:
+            if price <= 0:
                 print("Price must be a positive number.")
             else:
                 menu[name] = price
@@ -70,7 +70,7 @@ def change_price():
     if name in menu:
         try:
             new_price = float(input(f"Enter new price for {name}: "))
-            if new_price < 0:
+            if new_price <= 0:
                 print("Price must be a positive number.")
             else:
                 menu[name] = new_price
@@ -115,9 +115,5 @@ def main():
             print("Invalid choice. Please enter a number between 1 and 8.")
 
 
-
-
-
-
-if '__name__' == "_main_":
+if __name__ == "__main__":
     main()
